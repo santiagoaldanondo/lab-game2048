@@ -6,11 +6,11 @@
     <!--local-->
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="game.css">
-    <title>Nuestra página de Bootsrtrap</title>
+    <title>2048</title>
 </head>
 
 <body>
-
+  <div class="transparency">
     <h1 id="game-title">2048</h1>
     <div id="score">
         Score: <span class="js-score">0</span>
@@ -48,7 +48,7 @@
 
         <!--The tile container (second layer) goes inmediately after the cells and before the clearfix-->
         <div id="tile-container">
-            <div class="tile tile-position-0-0 val-2">2</div>
+            <!-- <div class="tile tile-position-0-0 val-2">2</div>
             <div class="tile tile-position-0-1 val-4">4</div>
             <div class="tile tile-position-0-2 val-8">8</div>
             <div class="tile tile-position-0-3 val-16">16</div>
@@ -66,19 +66,28 @@
             <div class="tile tile-position-3-0"></div>
             <div class="tile tile-position-3-1"></div>
             <div class="tile tile-position-3-2"></div>
-            <div class="tile tile-position-3-3"></div>
+            <div class="tile tile-position-3-3"></div> -->
+        </div>
+        <div id="game-over">
+          <div>Game Over</div>
+          <div>You won!!!</div>
+          <div>Score: <span class="js-score">0</span> </div>
         </div>
 
         <!--The clear fix is used to give space and show the game board because it has only floats inside -->
         <div class="clearfix"></div>
     </div>
-
+  </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="lib/ion.sound-3.0.7/ion.sound.min.js"></script>
+
     <script src="manageGame.js"></script>
     <script src="app.js"></script>
+
+
 </body>
 
 </html>

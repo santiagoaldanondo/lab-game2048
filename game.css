@@ -27,7 +27,7 @@ body {
     border-radius: 4px;
     padding: 10px;
     width: 600px;
-    margin: 0px 340px 40px 340px;
+    margin: 0px auto 40px auto;
     text-align: center;
 }
 
@@ -184,4 +184,29 @@ body {
     background: #009894;
     font-size: 50px;
     padding-top: 35px;
+}
+
+#game-over{
+  display: none;
+  width: 600px;
+  height: 600px;
+  /*background: rgba(255, 225, 255, 0.35);*/
+  box-sizing: border-box;
+  color: #777;
+  float: none;
+  font-size: 55px;
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+  margin: 250px auto 0px auto;
+
+}
+#game-over.show-won, #game-over.show-lost{
+  display: block;
+}
+#game-over.show-won div:first-child{
+  display: none;
+}
+#game-over.show-lost div:nth-child(2){
+  display: none;
 }

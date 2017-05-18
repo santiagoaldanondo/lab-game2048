@@ -60,6 +60,7 @@ Game2048.prototype._moveLeft = function () {
 
         for (i = 0; i < newRow.length - 1; i++) { //si encuentra los iguales entonces los duplica.
             if (newRow[i + 1] === newRow[i]) {
+                ion.sound.play("tap");
                 newRow[i] = newRow[i] * 2;
                 newRow[i + 1] = null; //con esto nos estamos cepillando el segundo elemento que forma parte ahora del primero
                 that._updateScore(newRow[i]);
@@ -148,6 +149,7 @@ Game2048.prototype._moveDown = function () {
 
 Game2048.prototype.move = function (direction) {
     if (!this._gameFinished()) {
+      ion.sound.play("snap");
         switch (direction) {
             case "up": boardChanged = this._moveUp(); break;
             case "down": boardChanged = this._moveDown(); break;
@@ -177,7 +179,7 @@ Game2048.prototype._updateScore = function (value) {
 
 Game2048.prototype._updateScore = function(value) {
   this.score += value;
-  
+
   if (value === 2048) {
     this.won = true;
   }
@@ -186,7 +188,9 @@ Game2048.prototype._updateScore = function(value) {
 Game2048.prototype.win = function () {
   return this.won;
 };
-
+Game2048.prototype.lose = function () {
+  return this.lost;
+};
 Game2048.prototype._isGameLost = function () {
   if (this._getAvailablePosition())
     return;
