@@ -1,6 +1,7 @@
 var game;
 
 window.onload = function () {
+  loadSounds();
   game = new Game2048();
   renderTiles();
 };
@@ -71,13 +72,3 @@ function moveListeners (event) {
 }
 
 document.addEventListener("keydown", moveListeners);
-
-function loadSounds () {
-  ion.sound({
-    sounds: [{name: "snap"}, {name: "tap"}],
-
-    path: "../lib/ion.sound-3.0.7/sounds/",
-    preload: true,
-    volume: 1.0
-  });
-}

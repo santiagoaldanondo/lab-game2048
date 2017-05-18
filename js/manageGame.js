@@ -149,6 +149,7 @@ Game2048.prototype._moveDown = function () {
 
 Game2048.prototype.move = function (direction) {
     if (!this._gameFinished()) {
+      console.log("estoy aqui")
       ion.sound.play("snap");
         switch (direction) {
             case "up": boardChanged = this._moveUp(); break;
@@ -223,3 +224,13 @@ Game2048.prototype._isGameLost = function () {
 
   this.lost = isLost;
 };
+
+function loadSounds () {
+  ion.sound({
+    sounds: [{name: "snap"}, {name: "tap"}],
+
+    path: "../lib/ion.sound-3.0.7/sounds/",
+    preload: true,
+    volume: 1.0
+  });
+}
